@@ -7,12 +7,10 @@
 //
 
 #include <iostream>
-#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
-#include <termios.h>
 #include <curses.h>
 #include <math.h>
-#include <stdlib.h>
 
 #include "Controller.hpp"
 #include "UILayout.hpp"
@@ -30,7 +28,13 @@ void PrintScreen(){
   game2048.PrintNumber((80 - 29 - 2)/2);
 }
 
+
 int main(void) {
+  // curses init
+  initscr();
+  // capture special keystrokes
+  keypad(stdscr, TRUE);
+
   char direction; // For Values get from controller.GetDirection()
   // int x; // For Align Center Values
 
@@ -38,7 +42,8 @@ int main(void) {
   srand((unsigned)time(NULL));
 
   // Initiate Screen
-  system("clear");
+  // system("clear"); // terminal command
+  clear(); // curses function
 
   // Set Start Numbers the Print them
   game2048.StartNumber();
@@ -52,14 +57,16 @@ int main(void) {
     game2048.NumberCombine(direction);
     if (game2048.GetIfMove()) {
       game2048.AddNumber(direction);
-      system("clear");
+      clear();
       PrintScreen();
     }
   }
 
   uiLayout.UIGameOver();
 
-  getchar();
+  getch();
 
+  // curses end
+  endwin();
   return 0;
 }

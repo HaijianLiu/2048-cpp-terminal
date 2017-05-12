@@ -11,9 +11,10 @@
 
 #include <stdio.h>
 #include <time.h>
-#include <termios.h>
 #include <math.h>
 #include <stdlib.h>
+#include <curses.h>
+
 
 #endif /* Game2048_hpp */
 
@@ -27,7 +28,7 @@ public:
 	// Print X of spaces
 	void PositionX(int x){
 		for (int i = 0; i < x; i++) {
-			printf(" ");
+			printw(" ");
 		}
 	}
 
@@ -37,27 +38,27 @@ public:
 
 	void PrintNumber(int x){
 		PositionX(x);
-		printf("+------+------+------+------+\n");
+		printw("+------+------+------+------+\n");
 		for (int i = 0; i < 4; i++) {
 			PositionX(x);
-			printf("|");
+			printw("|");
 			for (int j = 0; j < 4; j++) {
 				if(mainNumber[i][j] == 0){
-					printf("      ");
+					printw("      ");
 				}else{
-					printf(" %4d ", mainNumber[i][j]*2);
+					printw(" %4d ", mainNumber[i][j]*2);
 				}
-				printf("|");
+				printw("|");
 			}
-			printf("\n");
+			printw("\n");
 			PositionX(x);
-			printf("|      |      |      |      |\n");
+			printw("|      |      |      |      |\n");
 			PositionX(x);
-			printf("+------+------+------+------+\n");
+			printw("+------+------+------+------+\n");
 		}
 
 		// Test
-		// printf("ifMove = %d , ifAdd = %d \n", ifMove , ifAdd);
+		// printw("ifMove = %d , ifAdd = %d \n", ifMove , ifAdd);
 	}
 
 	// Initiate Start Numbers

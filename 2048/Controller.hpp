@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <curses.h>
 
 #endif /* Controller_hpp */
 
@@ -23,11 +24,15 @@ public:
 
 	// Get Direction
 	char GetDirection(){
-		system ("/bin/stty raw");
-		key = getchar();
-		system ("/bin/stty cooked");
 
-		switch(key){
+		// // Terminal Command
+		// system ("/bin/stty raw");
+		// key = getchar();
+		// system ("/bin/stty cooked");
+
+		// curses
+		move(0,0);
+		switch(getch()){
 			case 'w': dirction = 'u'; break;
 			case 'a': dirction = 'l'; break;
 			case 's': dirction = 'd'; break;
@@ -36,10 +41,10 @@ public:
 			case 'A': dirction = 'l'; break;
 			case 'S': dirction = 'd'; break;
 			case 'D': dirction = 'r'; break;
-			// case '^[[A': dirction = 'u'; break;
-			// case '^[[D': dirction = 'l'; break;
-			// case '^[[B': dirction = 'd'; break;
-			// case '^[[C': dirction = 'r'; break;
+			case KEY_UP: dirction = 'u'; break;
+			case KEY_LEFT: dirction = 'l'; break;
+			case KEY_DOWN: dirction = 'd'; break;
+			case KEY_RIGHT: dirction = 'r'; break;
 			// case 72: dirction = 'u'; break;
 			// case 75: dirction = 'l'; break;
 			// case 80: dirction = 'd'; break;
@@ -51,6 +56,6 @@ public:
 
 private:
 	char dirction;
-	char key;
+	// int key;
 
 };

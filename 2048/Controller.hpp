@@ -24,7 +24,10 @@ public:
 	// Get Direction
 	char GetDirection(){
 		system ("/bin/stty raw");
-		switch(getchar()){
+		key = getchar();
+		system ("/bin/stty cooked");
+
+		switch(key){
 			case 'w': dirction = 'u'; break;
 			case 'a': dirction = 'l'; break;
 			case 's': dirction = 'd'; break;
@@ -33,16 +36,21 @@ public:
 			case 'A': dirction = 'l'; break;
 			case 'S': dirction = 'd'; break;
 			case 'D': dirction = 'r'; break;
-			case 72: dirction = 'u'; break;
-			case 75: dirction = 'l'; break;
-			case 80: dirction = 'd'; break;
-			case 77: dirction = 'r'; break;
+			// case '^[[A': dirction = 'u'; break;
+			// case '^[[D': dirction = 'l'; break;
+			// case '^[[B': dirction = 'd'; break;
+			// case '^[[C': dirction = 'r'; break;
+			// case 72: dirction = 'u'; break;
+			// case 75: dirction = 'l'; break;
+			// case 80: dirction = 'd'; break;
+			// case 77: dirction = 'r'; break;
 			default : dirction = '0';
 		}
-		system ("/bin/stty cooked");
 		return dirction;
 	}
 
 private:
 	char dirction;
+	char key;
+
 };

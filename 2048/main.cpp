@@ -24,8 +24,7 @@ UILayout uiLayout;
 void PrintScreen(){
   move(4,(80 - 32 - 2)/2);
   uiLayout.PrintScore();
-  move(7,0);
-  game2048.PrintNumber((80 - 29 - 2)/2);
+  game2048.PrintNumber((80 - 29 - 2)/2, 7);
 }
 
 

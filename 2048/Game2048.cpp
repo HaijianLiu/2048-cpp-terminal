@@ -7,6 +7,8 @@
 //
 
 #include "Game2048.hpp"
+#include "UILayout.hpp"
+#include "Controller.hpp"
 
 #include <stdio.h>
 #include <time.h>
@@ -25,22 +27,15 @@ Game2048::~Game2048()
 {
 }
 
-// Print X of spaces
-void Game2048::PositionX(int x){
-  for (int i = 0; i < x; i++) {
-    printw(" ");
-  }
-}
-
 // Print MainNumber
 // * 1. If The Number is ZERO then Print NULL(SPACE)
 // 29 x 13
 
-void Game2048::PrintNumber(int x){
-  PositionX(x);
-  printw("+------+------+------+------+\n");
+void Game2048::PrintNumber(int x, int y){
+  move(y,x);
+  printw("+------+------+------+------+");
   for (int i = 0; i < 4; i++) {
-    PositionX(x);
+    move(y+3*i+1,x);
     printw("|");
     for (int j = 0; j < 4; j++) {
       if(mainNumber[i][j] == 0){
@@ -50,10 +45,9 @@ void Game2048::PrintNumber(int x){
       }
       printw("|");
     }
-    printw("\n");
-    PositionX(x);
-    printw("|      |      |      |      |\n");
-    PositionX(x);
+    move(y+3*i+2,x);
+    printw("|      |      |      |      |");
+    move(y+3*i+3,x);
     printw("+------+------+------+------+\n");
   }
 

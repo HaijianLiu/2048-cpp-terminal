@@ -22,7 +22,7 @@ public:
 	// Print MainNumber
 	// * 1. If The Number is ZERO then Print NULL(SPACE)
 	// 29 x 13
-	void PrintNumber(int x);
+	void PrintNumber(int x, int y);
 
 	// Initiate Start Numbers
 	// * 1. All Numbers RANDOMLY Begin with a ZERO OR 2

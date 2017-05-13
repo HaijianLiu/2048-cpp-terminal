@@ -14,7 +14,7 @@
 // 	void MainGameLoop()
 // private:
 // 	 UILayout uiLayout
-// 	 void PrintScreen()
+// 	 void PrintGameScreen()
 
 #include "Controller.hpp" // where include:
 // public:
@@ -76,7 +76,7 @@ private:
 
 	// #include "UILayout.hpp"
 	// print all of the screen finally
-	void PrintScreen();
+	void PrintGameScreen();
 
 	// Game Over
 	// * 1. When there is NO SPACE

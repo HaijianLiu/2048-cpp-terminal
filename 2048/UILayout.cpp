@@ -14,7 +14,7 @@
 
 UILayout::UILayout()
 {
-  // GetScreenSize();
+  getmaxyx(stdscr,screenY,screenX);
 }
 
 UILayout::~UILayout()

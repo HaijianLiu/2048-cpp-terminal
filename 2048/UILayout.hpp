@@ -22,8 +22,8 @@ public:
 
 private:
 	// Variables for Screen Size X & Y
-	// int screenX;
-	// int screenY;
+	int screenX;
+	int screenY;
 };
 
 #endif /* UILayout_hpp */

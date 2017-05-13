@@ -16,10 +16,9 @@
 #include "UILayout.hpp"
 #include "Game2048.hpp"
 
-// Class Initiate
-Game2048 game2048;
-
 int main(void) {
+  // Class Initiate
+  Game2048 game2048;
   // curses init
   initscr();
   // capture special keystrokes
@@ -31,6 +30,7 @@ int main(void) {
   // system("clear"); // terminal command
   clear(); // curses function
 
+  // start main game
   game2048.MainGameLoop();
 
   // curses end

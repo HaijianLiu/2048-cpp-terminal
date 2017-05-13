@@ -74,14 +74,14 @@ private:
 	// * 3. The Position is RANDOMLY on The Opsite side
 	void AddNumber(char direction);
 
+	// #include "UILayout.hpp"
+	// print all of the screen finally
+	void PrintScreen();
+
 	// Game Over
 	// * 1. When there is NO SPACE
 	// * 2. When there is NO Numbers to Combine
 	bool CheckGameOver();
-
-	// #include "UILayout.hpp"
-	// print all of the screen finally
-	void PrintScreen();
 };
 
 #endif /* Game2048_hpp */

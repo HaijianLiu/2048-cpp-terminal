@@ -211,6 +211,11 @@ bool Game2048::CheckGameOver(){
   return gameOver;
 }
 
+void Game2048::PrintScreen(){
+  uiLayout.PrintScore((80 - 32 - 2)/2,4);
+  Game2048::PrintNumber((80 - 29 - 2)/2, 7);
+}
+
 void Game2048::MainGameLoop(){
   // Set Start Numbers the Print them
   Game2048::StartNumber(); // randomly get some numbers
@@ -233,9 +238,4 @@ void Game2048::MainGameLoop(){
 
   getch();
 
-}
-
-void Game2048::PrintScreen(){
-  uiLayout.PrintScore((80 - 32 - 2)/2,4);
-  Game2048::PrintNumber((80 - 29 - 2)/2, 7);
 }

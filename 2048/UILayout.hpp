@@ -19,6 +19,8 @@ public:
 	// get screen size of default window and initiate UI position
 	void GetScreenSize();
 
+	// print title
+	void PrintTilte(int x, int y);
 	// print game over UI
 	void UIGameOver();
 	// print title score part
@@ -36,6 +38,8 @@ public:
 	int GetPosYPrintScore();
 	int GetPosXPrintNumber();
 	int GetPosYPrintNumber();
+	int GetPosXPrintTilte();
+	int GetPosYPrintTilte();
 
 private:
 	// Variables for Screen Size X & Y
@@ -47,6 +51,8 @@ private:
 	int posYPrintScore;
 	int posXPrintNumber;
 	int posYPrintNumber;
+	int posXPrintTilte;
+	int posYPrintTilte;
 };
 
 #endif /* UILayout_hpp */

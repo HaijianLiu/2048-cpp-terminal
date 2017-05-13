@@ -20,7 +20,6 @@ Game2048::Game2048()
   gameOver = false; // A bool for CheckGameOver()
 }
 
-
 Game2048::~Game2048()
 {
 }

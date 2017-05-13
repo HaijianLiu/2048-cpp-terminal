@@ -25,7 +25,6 @@ int main(void) {
   keypad(stdscr, TRUE);
   // Random Seed Initiate
   srand((unsigned)time(NULL));
-
   // Initiate Screen
   // system("clear"); // terminal command
   clear(); // curses function

@@ -16,20 +16,9 @@ public:
 	UILayout();
 	~UILayout();
 
-	// Print X of spaces
-	void PositionX(int x);
-
-	// Print Y of \n
-	void PositionY(int y);
-
-	// Get screenX to int
-	// int GetScreenX(){
-	// 	return screenX;
-	// }
-
 	void UIGameOver();
 
-	void PrintScore(int x);
+	void PrintScore();
 
 private:
 	// Variables for Screen Size X & Y

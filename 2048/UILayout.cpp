@@ -21,55 +21,14 @@ UILayout::~UILayout()
 {
 }
 
-	// Get Screen Size
-	// void GetScreenSize(){
-	// 	CONSOLE_SCREEN_BUFFER_INFO csbi;
-	// 	int ret;
-	// 	ret = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-	// 	if (ret) {
-	// 		screenX = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-	// 		screenY = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
-	// 	}
-	// }
-  // void GetScreenSize(){
-  //     wresize(getwin(CURSES), 30, 30);
-  // wresize(getwin(),30, 30);
-  // CONSOLE_SCREEN_BUFFER_INFO csbi;
-  // int ret;
-  // ret = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  // if (ret) {
-  // 	screenX = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-  // 	screenY = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
-  // }
+void UILayout::UIGameOver(){
+	printw("GAME OVER\n");
+}
 
-
-	// Print X of spaces
-	void UILayout::PositionX(int x){
-		for (int i = 0; i < x; i++) {
-			printw(" ");
-		}
-	}
-
-	// Print Y of \n
-	void UILayout::PositionY(int y){
-		for (int i = 0; i < y; i++) {
-			printw("\n");
-		}
-	}
-
-	// Get screenX to int
-	// int GetScreenX(){
-	// 	return screenX;
-	// }
-	void UILayout::UIGameOver(){
-		printw("GAME OVER\n");
-	}
-
-	void UILayout::PrintScore(int x){
-		// printw("+---------------------------+\n");
-		// printw("|    SCORE          BEST    |\n");
-		// printw("|                           |\n");
-		// printw("+---------------------------+\n");
-		PositionX(x);
-		printw("JOIN THE NUMBERS AND GET TO 2048\n");
-	}
+void UILayout::PrintScore(){
+	// printw("+---------------------------+\n");
+	// printw("|    SCORE          BEST    |\n");
+	// printw("|                           |\n");
+	// printw("+---------------------------+\n");
+	printw("JOIN THE NUMBERS AND GET TO 2048\n");
+}

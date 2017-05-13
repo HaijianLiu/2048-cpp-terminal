@@ -7,7 +7,6 @@
 //
 
 #include "Game2048.hpp"
-#include "UILayout.hpp"
 #include "Controller.hpp"
 
 #include <stdio.h>

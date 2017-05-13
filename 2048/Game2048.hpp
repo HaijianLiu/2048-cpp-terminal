@@ -49,7 +49,7 @@ public:
 	// * 2. When there is NO Numbers to Combine
 	bool CheckGameOver();
 
-	// #include "UILayout.h"
+	// #include "UILayout.hpp"
 	// print all of the screen finally
 	void PrintScreen();
 
@@ -61,7 +61,7 @@ private:
 	bool ifAdd; // If A BIGGEST Number is Added
 	bool gameOver; // A bool for CheckGameOver()
 
-	// #include "UILayout.h"
+	// #include "UILayout.hpp"
 	UILayout uiLayout; // UILayout object
 };
 

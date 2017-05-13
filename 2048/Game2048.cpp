@@ -27,9 +27,13 @@ Game2048::~Game2048()
 {
 }
 
-// Print MainNumber
-// * 1. If The Number is ZERO then Print NULL(SPACE)
-// 29 x 13
+void Game2048::StartNumber(){
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4; j++) {
+      mainNumber[i][j] = rand()%2;
+    }
+  }
+}
 
 void Game2048::PrintNumber(int x, int y){
   move(y,x);
@@ -55,19 +59,6 @@ void Game2048::PrintNumber(int x, int y){
   // printw("ifMove = %d , ifAdd = %d \n", ifMove , ifAdd);
 }
 
-// Initiate Start Numbers
-// * 1. All Numbers RANDOMLY Begin with a ZERO OR 2
-void Game2048::StartNumber(){
-  for (int i = 0; i < 4; i++) {
-    for (int j = 0; j < 4; j++) {
-      mainNumber[i][j] = rand()%2;
-    }
-  }
-}
-
-// Number Combine
-// * 1. If The Same Number Then do a PLUS
-// * 2. If The Position is ZERO Then Move to It
 void Game2048::NumberCombine(char direction){
 
   if (direction == 'r') {
@@ -131,21 +122,14 @@ void Game2048::NumberCombine(char direction){
   }
 }
 
-// Get bool of ifMove
 bool Game2048::GetIfMove(){
   return ifMove;
 }
 
-// Reset ifMove to false
 void Game2048::ResetIfMove(){
   ifMove = false;
 }
 
-// Add a New Number
-// * 1A. When ifMove == true RANDOMLY Add A Number OR NOT
-// * 1B. When ifMove == true Add A Number
-// * 2. The Number is RANDOMLY Based on the BIGGEST Number
-// * 3. The Position is RANDOMLY on The Opsite side
 void Game2048::AddNumber(char direction){
 
   // * 2. Check the BIGGEST Number
@@ -204,9 +188,6 @@ void Game2048::AddNumber(char direction){
 
 }
 
-// Game Over
-// * 1. When there is NO SPACE
-// * 2. When there is NO Numbers to Combine
 bool Game2048::CheckGameOver(){
   gameOver = true;
 
@@ -230,4 +211,9 @@ bool Game2048::CheckGameOver(){
     }
   }
   return gameOver;
+}
+
+void Game2048::PrintScreen(){
+  uiLayout.PrintScore((80 - 32 - 2)/2,4);
+  Game2048::PrintNumber((80 - 29 - 2)/2, 7);
 }

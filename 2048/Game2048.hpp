@@ -9,6 +9,7 @@
 #ifndef Game2048_hpp
 #define Game2048_hpp
 
+#include "UILayout.hpp"
 
 class Game2048
 {
@@ -16,17 +17,14 @@ public:
 	Game2048();
 	~Game2048();
 
-	// Print X of spaces
-	void PositionX(int x);
+	// Initiate Start Numbers
+	// * 1. All Numbers RANDOMLY Begin with a ZERO OR 2
+	void StartNumber();
 
 	// Print MainNumber
 	// * 1. If The Number is ZERO then Print NULL(SPACE)
 	// 29 x 13
 	void PrintNumber(int x, int y);
-
-	// Initiate Start Numbers
-	// * 1. All Numbers RANDOMLY Begin with a ZERO OR 2
-	void StartNumber();
 
 	// Number Combine
 	// * 1. If The Same Number Then do a PLUS
@@ -51,13 +49,20 @@ public:
 	// * 2. When there is NO Numbers to Combine
 	bool CheckGameOver();
 
+	// #include "UILayout.h"
+	// print all of the screen finally
+	void PrintScreen();
+
 private:
-	int mainNumber[4][4];
-	bool ifMove;
+	int mainNumber[4][4]; // main number
+	bool ifMove; // if any number moved after press controller
 	int n; // A Position Variable For Add Number
 	double bigNumber; // A BIGGEST Number Variable For Add Number
 	bool ifAdd; // If A BIGGEST Number is Added
 	bool gameOver; // A bool for CheckGameOver()
+
+	// #include "UILayout.h"
+	UILayout uiLayout; // UILayout object
 };
 
 #endif /* Game2048_hpp */

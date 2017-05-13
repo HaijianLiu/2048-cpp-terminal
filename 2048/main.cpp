@@ -21,12 +21,6 @@ Controller controller;
 Game2048 game2048;
 UILayout uiLayout;
 
-void PrintScreen(){
-  uiLayout.PrintScore((80 - 32 - 2)/2,4);
-  game2048.PrintNumber((80 - 29 - 2)/2, 7);
-}
-
-
 int main(void) {
   // curses init
   initscr();
@@ -46,7 +40,7 @@ int main(void) {
   // Set Start Numbers the Print them
   game2048.StartNumber();
 
-  PrintScreen();
+  game2048.PrintScreen();
 
   // Check if Game Over LOOP the Main Game
   while (!game2048.CheckGameOver()) {
@@ -56,7 +50,7 @@ int main(void) {
     if (game2048.GetIfMove()) {
       game2048.AddNumber(direction);
       clear();
-      PrintScreen();
+      game2048.PrintScreen();
     }
   }
 

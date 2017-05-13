@@ -9,13 +9,43 @@
 #ifndef Game2048_hpp
 #define Game2048_hpp
 
-#include "UILayout.hpp"
+#include "UILayout.hpp" // where include:
+// public:
+// 	void MainGameLoop()
+// private:
+// 	 UILayout uiLayout
+// 	 void PrintScreen()
+
+#include "Controller.hpp" // where include:
+// public:
+// 	void MainGameLoop()
+// private:
+// 	 Controller controller
 
 class Game2048
 {
 public:
 	Game2048();
 	~Game2048();
+
+	// #include "UILayout.hpp"
+	// #include "Controller.hpp"
+	void MainGameLoop();
+
+private:
+	int mainNumber[4][4]; // main number
+	bool ifMove; // if any number moved after press controller
+	int n; // A Position Variable For Add Number
+	double bigNumber; // A BIGGEST Number Variable For Add Number
+	bool ifAdd; // If A BIGGEST Number is Added
+	bool gameOver; // A bool for CheckGameOver()
+
+	// #include "UILayout.hpp"
+	UILayout uiLayout; // UILayout object
+
+	// #include "Controller.hpp"
+	Controller controller; // Controller object
+	char direction; // For Values get from controller.GetDirection()
 
 	// Initiate Start Numbers
 	// * 1. All Numbers RANDOMLY Begin with a ZERO OR 2
@@ -52,17 +82,6 @@ public:
 	// #include "UILayout.hpp"
 	// print all of the screen finally
 	void PrintScreen();
-
-private:
-	int mainNumber[4][4]; // main number
-	bool ifMove; // if any number moved after press controller
-	int n; // A Position Variable For Add Number
-	double bigNumber; // A BIGGEST Number Variable For Add Number
-	bool ifAdd; // If A BIGGEST Number is Added
-	bool gameOver; // A bool for CheckGameOver()
-
-	// #include "UILayout.hpp"
-	UILayout uiLayout; // UILayout object
 };
 
 #endif /* Game2048_hpp */

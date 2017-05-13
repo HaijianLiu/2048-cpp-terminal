@@ -211,6 +211,30 @@ bool Game2048::CheckGameOver(){
   return gameOver;
 }
 
+void Game2048::MainGameLoop(){
+  // Set Start Numbers the Print them
+  Game2048::StartNumber(); // randomly get some numbers
+  Game2048::PrintScreen(); // Initiate a screen
+
+  // check if game is NOT over then loop the main game
+  while (!Game2048::CheckGameOver()) {
+    Game2048::ResetIfMove(); // reset ifMove = false
+    direction = controller.GetDirection(); // get char direction from #controller Class
+    Game2048::NumberCombine(direction); // use char direction to combine numbers
+    // check: if numbers moved then refresh the screen. if not then dont refresh
+    if (Game2048::GetIfMove()) {
+      Game2048::AddNumber(direction); // if moved the do the add
+      clear(); // refresh the whole screen
+      Game2048::PrintScreen(); // print the new screen
+    }
+  }
+
+  uiLayout.UIGameOver();
+
+  getch();
+
+}
+
 void Game2048::PrintScreen(){
   uiLayout.PrintScore((80 - 32 - 2)/2,4);
   Game2048::PrintNumber((80 - 29 - 2)/2, 7);

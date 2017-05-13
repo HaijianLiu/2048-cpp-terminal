@@ -9,7 +9,6 @@
 #include "Controller.hpp"
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <curses.h>
 
 
@@ -17,12 +16,10 @@ Controller::Controller()
 {
 }
 
-
 Controller::~Controller()
 {
 }
 
-// Get Direction
 char Controller::GetDirection(){
 
   // // Terminal Command

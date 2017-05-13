@@ -16,12 +16,11 @@ public:
 	Controller();
 	~Controller();
 
-	// Get Direction
+	// get keybord direction
 	char GetDirection();
 
 private:
 	char dirction;
-	// int key;
 };
 
 #endif /* Controller_hpp */

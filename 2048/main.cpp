@@ -17,19 +17,13 @@
 #include "Game2048.hpp"
 
 // Class Initiate
-Controller controller;
 Game2048 game2048;
-UILayout uiLayout;
 
 int main(void) {
   // curses init
   initscr();
   // capture special keystrokes
   keypad(stdscr, TRUE);
-
-  char direction; // For Values get from controller.GetDirection()
-  // int x; // For Align Center Values
-
   // Random Seed Initiate
   srand((unsigned)time(NULL));
 
@@ -37,26 +31,7 @@ int main(void) {
   // system("clear"); // terminal command
   clear(); // curses function
 
-  // Set Start Numbers the Print them
-  game2048.StartNumber();
-
-  game2048.PrintScreen();
-
-  // Check if Game Over LOOP the Main Game
-  while (!game2048.CheckGameOver()) {
-    game2048.ResetIfMove();
-    direction = controller.GetDirection();
-    game2048.NumberCombine(direction);
-    if (game2048.GetIfMove()) {
-      game2048.AddNumber(direction);
-      clear();
-      game2048.PrintScreen();
-    }
-  }
-
-  uiLayout.UIGameOver();
-
-  getch();
+  game2048.MainGameLoop();
 
   // curses end
   endwin();

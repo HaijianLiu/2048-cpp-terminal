@@ -25,7 +25,8 @@ void UILayout::UIGameOver(){
 	printw("GAME OVER\n");
 }
 
-void UILayout::PrintScore(){
+void UILayout::PrintScore(int x, int y){
+	move(y,x);
 	// printw("+---------------------------+\n");
 	// printw("|    SCORE          BEST    |\n");
 	// printw("|                           |\n");

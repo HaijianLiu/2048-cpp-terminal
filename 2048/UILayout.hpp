@@ -18,7 +18,7 @@ public:
 
 	void UIGameOver();
 
-	void PrintScore();
+	void PrintScore(int x, int y);
 
 private:
 	// Variables for Screen Size X & Y

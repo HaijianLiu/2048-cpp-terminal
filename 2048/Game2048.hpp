@@ -16,9 +16,6 @@
 #include <curses.h>
 
 
-#endif /* Game2048_hpp */
-
-#pragma once
 class Game2048
 {
 public:
@@ -246,3 +243,5 @@ private:
 	bool ifAdd; // If A BIGGEST Number is Added
 	bool gameOver; // A bool for CheckGameOver()
 };
+
+#endif /* Game2048_hpp */

@@ -12,9 +12,6 @@
 #include <stdio.h>
 #include <curses.h>
 
-#endif /* UILayout_hpp */
-
-#pragma once
 class UILayout
 {
 public:
@@ -80,3 +77,5 @@ private:
 	// int screenX;
 	// int screenY;
 };
+
+#endif /* UILayout_hpp */

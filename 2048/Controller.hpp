@@ -13,9 +13,6 @@
 #include <stdlib.h>
 #include <curses.h>
 
-#endif /* Controller_hpp */
-
-#pragma once
 class Controller
 {
 public:
@@ -59,3 +56,5 @@ private:
 	// int key;
 
 };
+
+#endif /* Controller_hpp */

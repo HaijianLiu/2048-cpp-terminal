@@ -22,6 +22,19 @@ UILayout::~UILayout()
 
 void UILayout::GetScreenSize(){
   getmaxyx(stdscr,screenY,screenX);
+  posXPrintScore = PositionXCenter(32);
+  posYPrintScore = 4;
+  posXPrintNumber = PositionXCenter(29);
+  posYPrintNumber = 7;
+}
+
+void UILayout::UIGameOver(){
+	printw("GAME OVER\n");
+}
+
+void UILayout::PrintScore(int x, int y){
+	move(y,x);
+	printw("JOIN THE NUMBERS AND GET TO 2048\n");
 }
 
 int UILayout::GetScreenX(){
@@ -32,11 +45,19 @@ int UILayout::GetScreenY(){
 	return screenY;
 }
 
-void UILayout::UIGameOver(){
-	printw("GAME OVER\n");
+int UILayout::PositionXCenter(int width){
+  return (screenX - width)/2;
 }
 
-void UILayout::PrintScore(int x, int y){
-	move(y,x);
-	printw("JOIN THE NUMBERS AND GET TO 2048\n");
+int UILayout::GetPosXPrintScore(){
+  return posXPrintScore;
+}
+int UILayout::GetPosYPrintScore(){
+  return posYPrintScore;
+}
+int UILayout::GetPosXPrintNumber(){
+  return posXPrintNumber;
+}
+int UILayout::GetPosYPrintNumber(){
+  return posYPrintNumber;
 }

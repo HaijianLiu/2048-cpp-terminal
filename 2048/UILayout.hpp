@@ -9,8 +9,6 @@
 #ifndef UILayout_hpp
 #define UILayout_hpp
 
-#include <stdio.h>
-#include <curses.h>
 
 class UILayout
 {
@@ -18,59 +16,20 @@ public:
 	UILayout();
 	~UILayout();
 
-	// Get Screen Size
-	// void GetScreenSize(){
-	// 	CONSOLE_SCREEN_BUFFER_INFO csbi;
-	// 	int ret;
-	// 	ret = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-	// 	if (ret) {
-	// 		screenX = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-	// 		screenY = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
-	// 	}
-	// }
-    // void GetScreenSize(){
-    //     wresize(getwin(CURSES), 30, 30);
-		// wresize(getwin(),30, 30);
-		// CONSOLE_SCREEN_BUFFER_INFO csbi;
-		// int ret;
-		// ret = GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-		// if (ret) {
-		// 	screenX = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-		// 	screenY = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
-		// }
-
-
 	// Print X of spaces
-	void PositionX(int x){
-		for (int i = 0; i < x; i++) {
-			printw(" ");
-		}
-	}
+	void PositionX(int x);
 
 	// Print Y of \n
-	void PositionY(int y){
-		for (int i = 0; i < y; i++) {
-			printw("\n");
-		}
-	}
+	void PositionY(int y);
 
 	// Get screenX to int
 	// int GetScreenX(){
 	// 	return screenX;
 	// }
 
-	void UIGameOver(){
-		printw("GAME OVER\n");
-	}
+	void UIGameOver();
 
-	void PrintScore(int x){
-		// printw("+---------------------------+\n");
-		// printw("|    SCORE          BEST    |\n");
-		// printw("|                           |\n");
-		// printw("+---------------------------+\n");
-		PositionX(x);
-		printw("JOIN THE NUMBERS AND GET TO 2048\n");
-	}
+	void PrintScore(int x);
 
 private:
 	// Variables for Screen Size X & Y

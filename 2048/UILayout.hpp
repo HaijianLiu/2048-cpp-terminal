@@ -16,9 +16,15 @@ public:
 	UILayout();
 	~UILayout();
 
+	// print game over UI
 	void UIGameOver();
 
+	// print title score part
 	void PrintScore(int x, int y);
+
+	// get max window size x and y
+	int GetMaxX();
+	int GetMaxY();
 
 private:
 	// Variables for Screen Size X & Y

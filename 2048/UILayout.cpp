@@ -21,15 +21,20 @@ UILayout::~UILayout()
 {
 }
 
+int UILayout::GetMaxX(){
+	return screenX;
+}
+
+int UILayout::GetMaxY(){
+	return screenY;
+}
+
+
 void UILayout::UIGameOver(){
 	printw("GAME OVER\n");
 }
 
 void UILayout::PrintScore(int x, int y){
 	move(y,x);
-	// printw("+---------------------------+\n");
-	// printw("|    SCORE          BEST    |\n");
-	// printw("|                           |\n");
-	// printw("+---------------------------+\n");
 	printw("JOIN THE NUMBERS AND GET TO 2048\n");
 }

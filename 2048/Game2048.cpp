@@ -10,9 +10,8 @@
 #include "Controller.hpp"
 
 #include <stdio.h>
-#include <time.h>
-#include <math.h>
 #include <stdlib.h>
+#include <math.h>
 #include <curses.h>
 
 

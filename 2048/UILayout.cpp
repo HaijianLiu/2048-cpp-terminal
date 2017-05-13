@@ -14,21 +14,23 @@
 
 UILayout::UILayout()
 {
-  getmaxyx(stdscr,screenY,screenX);
 }
 
 UILayout::~UILayout()
 {
 }
 
-int UILayout::GetMaxX(){
+void UILayout::GetScreenSize(){
+  getmaxyx(stdscr,screenY,screenX);
+}
+
+int UILayout::GetScreenX(){
 	return screenX;
 }
 
-int UILayout::GetMaxY(){
+int UILayout::GetScreenY(){
 	return screenY;
 }
-
 
 void UILayout::UIGameOver(){
 	printw("GAME OVER\n");

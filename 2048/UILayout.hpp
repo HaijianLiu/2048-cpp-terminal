@@ -21,10 +21,12 @@ public:
 
 	// print title score part
 	void PrintScore(int x, int y);
-
+	
+	// get screen size of default window
+	void GetScreenSize();
 	// get max window size x and y
-	int GetMaxX();
-	int GetMaxY();
+	int GetScreenX();
+	int GetScreenY();
 
 private:
 	// Variables for Screen Size X & Y

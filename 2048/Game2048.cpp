@@ -212,11 +212,13 @@ bool Game2048::CheckGameOver(){
 }
 
 void Game2048::PrintScreen(){
-  uiLayout.PrintScore((80 - 32 - 2)/2,4);
-  Game2048::PrintNumber((80 - 29 - 2)/2, 7);
+  uiLayout.PrintScore((uiLayout.GetScreenX() - 32 - 2)/2,4);
+  Game2048::PrintNumber((uiLayout.GetScreenX() - 29 - 2)/2, 7);
 }
 
 void Game2048::MainGameLoop(){
+  // get screen size of default window
+  uiLayout.GetScreenSize();
   // Set Start Numbers the Print them
   Game2048::StartNumber(); // randomly get some numbers
   Game2048::PrintScreen(); // Initiate a screen

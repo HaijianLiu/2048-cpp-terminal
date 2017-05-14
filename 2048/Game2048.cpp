@@ -216,12 +216,10 @@ void Game2048::PrintGameScreen(){
 }
 
 void Game2048::MainTitle(){
-  uiLayout.GetScreenSize(); // get screen size of default window
   uiLayout.PrintTilte(uiLayout.GetPosXPrintTilte(),uiLayout.GetPosYPrintTilte());
 }
 
 void Game2048::MainGameLoop(){
-  uiLayout.GetScreenSize(); // get screen size of default window
   // Set Start Numbers the Print them
   Game2048::StartNumber(); // randomly get some numbers
   Game2048::PrintGameScreen(); // Initiate a screen

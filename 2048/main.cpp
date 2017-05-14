@@ -17,17 +17,17 @@
 #include "Game2048.hpp"
 
 int main(void) {
-  // Class Initiate
-  Game2048 game2048;
   // curses init
   initscr();
   // capture special keystrokes
   keypad(stdscr, TRUE);
   // Random Seed Initiate
   srand((unsigned)time(NULL));
-  // Initiate Screen
   // system("clear"); // terminal command
   clear(); // curses function
+
+  // Class Initiate
+  Game2048 game2048;
 
   // start main game
   game2048.MainGameLoop();

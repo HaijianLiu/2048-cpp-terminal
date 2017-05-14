@@ -14,13 +14,6 @@
 
 UILayout::UILayout()
 {
-}
-
-UILayout::~UILayout()
-{
-}
-
-void UILayout::GetScreenSize(){
   getmaxyx(stdscr,screenY,screenX);
   posXPrintScore = PositionXCenter(32);
   posYPrintScore = 4;
@@ -28,6 +21,10 @@ void UILayout::GetScreenSize(){
   posYPrintNumber = 7;
   posXPrintTilte = PositionXCenter(36);
   posYPrintTilte = 4;
+}
+
+UILayout::~UILayout()
+{
 }
 
 void UILayout::PrintTilte(int x, int y){

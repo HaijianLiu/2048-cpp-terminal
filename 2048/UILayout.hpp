@@ -16,9 +16,6 @@ public:
 	UILayout();
 	~UILayout();
 
-	// get screen size of default window and initiate UI position
-	void GetScreenSize();
-
 	// print title
 	void PrintTilte(int x, int y);
 	// print game over UI

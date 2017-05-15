@@ -9,6 +9,8 @@
 #ifndef UILayout_hpp
 #define UILayout_hpp
 
+#include <string>
+using namespace std;
 
 class UILayout
 {
@@ -23,33 +25,33 @@ public:
 	// print title score part
 	void PrintScore(int x, int y);
 
-	// get max window size x and y
-	int GetScreenX();
-	int GetScreenY();
-
 	// position X to center according to given width of itself
 	int PositionXCenter(int width);
 
 	// get location values of every parts
+	int GetPosXPrintTilte();
+	int GetPosYPrintTilte();
 	int GetPosXPrintScore();
 	int GetPosYPrintScore();
 	int GetPosXPrintNumber();
 	int GetPosYPrintNumber();
-	int GetPosXPrintTilte();
-	int GetPosYPrintTilte();
 
 private:
 	// Variables for Screen Size X & Y
 	int screenX;
 	int screenY;
 
+	// strings
+	string strGameOver;
+	string strScore;
+
 	// UI position of every parts
+	int posXPrintTilte;
+	int posYPrintTilte;
 	int posXPrintScore;
 	int posYPrintScore;
 	int posXPrintNumber;
 	int posYPrintNumber;
-	int posXPrintTilte;
-	int posYPrintTilte;
 };
 
 #endif /* UILayout_hpp */

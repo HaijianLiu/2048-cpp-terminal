@@ -211,7 +211,7 @@ bool Game2048::CheckGameOver(){
 }
 
 void Game2048::PrintGameScreen(){
-  uiLayout.PrintScore(uiLayout.GetPosXPrintScore(),uiLayout.GetPosYPrintScore());
+  uiLayout.PrintScore();
   Game2048::PrintNumber(uiLayout.GetPosXPrintNumber(),uiLayout.GetPosYPrintNumber());
 }
 

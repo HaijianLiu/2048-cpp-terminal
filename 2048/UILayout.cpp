@@ -18,9 +18,12 @@ UILayout::UILayout()
   // initialize string variables
   strGameOver = "GAME OVER";
   strScore = "JOIN THE NUMBERS AND GET TO 2048";
+  strStartGame = "PRESS ANY KEY";
   // initialize coordinates
   posXPrintTilte = PositionXCenter(36);
   posYPrintTilte = 4;
+  posXStrStartGame = PositionXCenter((int)strStartGame.length());
+  posYStrStartGame = 13;
   posXPrintScore = PositionXCenter((int)strScore.length());
   posYPrintScore = 4;
   posXPrintNumber = PositionXCenter(29);
@@ -32,34 +35,28 @@ UILayout::~UILayout()
 }
 
 void UILayout::PrintTilte(int x, int y){
-  move(y+0,x);printw(" _______  _______  _   ___   _____  ");
-  move(y+1,x);printw("|       ||  _    || | |   | |  _  | ");
-  move(y+2,x);printw("|____   || | |   || |_|   | | |_| | ");
-  move(y+3,x);printw(" ____|  || | |   ||       ||   _   |");
-  move(y+4,x);printw("| ______|| |_|   ||___    ||  | |  |");
-  move(y+5,x);printw("| |_____ |       |    |   ||  |_|  |");
-  move(y+6,x);printw("|_______||_______|    |___||_______|");
+  mvprintw(y+0,x," _______  _______  _   ___   _____  ");
+  mvprintw(y+1,x,"|       ||  _    || | |   | |  _  | ");
+  mvprintw(y+2,x,"|____   || | |   || |_|   | | |_| | ");
+  mvprintw(y+3,x," ____|  || | |   ||       ||   _   |");
+  mvprintw(y+4,x,"| ______|| |_|   ||___    ||  | |  |");
+  mvprintw(y+5,x,"| |_____ |       |    |   ||  |_|  |");
+  mvprintw(y+6,x,"|_______||_______|    |___||_______|");
+  mvprintw(posYStrStartGame,posXStrStartGame,strStartGame.c_str());
 }
 
 void UILayout::UIGameOver(){
 	printw(strGameOver.c_str());
 }
 
-void UILayout::PrintScore(int x, int y){
-	move(y,x);
-	printw(strScore.c_str());
+void UILayout::PrintScore(){
+	mvprintw(posYPrintScore,posXPrintScore,strScore.c_str());
 }
 
 int UILayout::PositionXCenter(int width){
   return (screenX - width)/2;
 }
 
-int UILayout::GetPosXPrintScore(){
-  return posXPrintScore;
-}
-int UILayout::GetPosYPrintScore(){
-  return posYPrintScore;
-}
 int UILayout::GetPosXPrintNumber(){
   return posXPrintNumber;
 }

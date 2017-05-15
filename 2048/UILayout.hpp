@@ -23,7 +23,7 @@ public:
 	// print game over UI
 	void UIGameOver();
 	// print title score part
-	void PrintScore(int x, int y);
+	void PrintScore();
 
 	// position X to center according to given width of itself
 	int PositionXCenter(int width);
@@ -31,8 +31,6 @@ public:
 	// get location values of every parts
 	int GetPosXPrintTilte();
 	int GetPosYPrintTilte();
-	int GetPosXPrintScore();
-	int GetPosYPrintScore();
 	int GetPosXPrintNumber();
 	int GetPosYPrintNumber();
 
@@ -44,6 +42,7 @@ private:
 	// strings
 	string strGameOver;
 	string strScore;
+	string strStartGame;
 
 	// UI position of every parts
 	int posXPrintTilte;
@@ -52,6 +51,8 @@ private:
 	int posYPrintScore;
 	int posXPrintNumber;
 	int posYPrintNumber;
+	int posXStrStartGame;
+	int posYStrStartGame;
 };
 
 #endif /* UILayout_hpp */

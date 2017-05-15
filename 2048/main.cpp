@@ -19,6 +19,7 @@ int main(void) {
   initscr();
   // sets the cursor state to invisible
   curs_set(0);
+  noecho();
   // capture special keystrokes
   keypad(stdscr, TRUE);
   // Random Seed Initiate

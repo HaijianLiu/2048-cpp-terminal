@@ -44,6 +44,7 @@ private:
 	string strCopyRight1;
 	string strCopyRight2;
 	string strCopyRight3;
+	string strGameReset;
 
 
 	// UI position of every parts
@@ -59,7 +60,10 @@ private:
 	int posXStrCopyRight2;
 	int posXStrCopyRight3;
 	int posYStrCopyRight;
-
+	int posXStrGameOver;
+	int posYStrGameOver;
+	int posXStrGameReset;
+	int posYStrGameReset;
 };
 
 #endif /* UILayout_hpp */

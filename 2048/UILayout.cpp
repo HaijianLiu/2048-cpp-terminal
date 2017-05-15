@@ -16,7 +16,8 @@ UILayout::UILayout()
   // get max stdscr size
   getmaxyx(stdscr,screenY,screenX);
   // initialize string variables
-  strGameOver = "GAME OVER";
+  strGameOver =  "       GAME   OVER       ";
+  strGameReset = "  <R> RESTART  <E> EXIT  ";
   strScore = "JOIN THE NUMBERS AND GET TO 2048";
   strStartGame = "PRESS ANY KEY";
   strCopyRight1 = "(C)2048 IS ORIGINALLY DEVELOPED BY GABRIELE CIRULLI";
@@ -35,9 +36,14 @@ UILayout::UILayout()
   posYStrCopyRight = posYStrStartGame+4;
   // game screen
   posXPrintScore = PositionXCenter((int)strScore.length());
-  posYPrintScore = (screenY-16)/2);
+  posYPrintScore = (screenY-16)/2;
   posXPrintNumber = PositionXCenter(29);
   posYPrintNumber = posYPrintScore+3;
+  // gameover screen
+  posXStrGameOver = PositionXCenter((int)strGameOver.length());
+  posYStrGameOver = (screenY-2)/2;
+  posXStrGameReset = PositionXCenter((int)strGameReset.length());
+  posYStrGameReset = posYStrGameOver+1;
 }
 
 UILayout::~UILayout()
@@ -45,7 +51,6 @@ UILayout::~UILayout()
 }
 
 void UILayout::PrintTilte(){
-  attron(A_BOLD);
   mvprintw(posYPrintTilte+0,posXPrintTilte," _______  _______  _   ___   _____  ");
   mvprintw(posYPrintTilte+1,posXPrintTilte,"|       ||  _    || | |   | |  _  | ");
   mvprintw(posYPrintTilte+2,posXPrintTilte,"|____   || | |   || |_|   | | |_| | ");
@@ -53,7 +58,6 @@ void UILayout::PrintTilte(){
   mvprintw(posYPrintTilte+4,posXPrintTilte,"| ______|| |_|   ||___    ||  | |  |");
   mvprintw(posYPrintTilte+5,posXPrintTilte,"| |_____ |       |    |   ||  |_|  |");
   mvprintw(posYPrintTilte+6,posXPrintTilte,"|_______||_______|    |___||_______|");
-  attroff(A_BOLD);
   attron(A_BLINK);
   mvprintw(posYStrStartGame,posXStrStartGame,strStartGame.c_str());
   attroff(A_BLINK);
@@ -63,7 +67,10 @@ void UILayout::PrintTilte(){
 }
 
 void UILayout::UIGameOver(){
-	printw(strGameOver.c_str());
+  attron(A_REVERSE);
+	mvprintw(posYStrGameOver,posXStrGameOver,strGameOver.c_str());
+  mvprintw(posYStrGameReset,posXStrGameReset,strGameReset.c_str());
+  attroff(A_REVERSE);
 }
 
 void UILayout::PrintScore(){

@@ -18,6 +18,7 @@
 Game2048::Game2048()
 {
   gameOver = false; // A bool for CheckGameOver()
+  reset = 'r'; // default to run the game
 }
 
 Game2048::~Game2048()
@@ -221,21 +222,30 @@ void Game2048::MainGameLoop(){
   // wait user press any key
   getch();
 
-  // get into main game
-  clear();
-  // Set Start Numbers the Print them
-  Game2048::StartNumber(); // randomly get some numbers
-  Game2048::PrintGameScreen(); // Initiate a screen
-  // check if game is NOT over then loop the main game
-  while (!Game2048::CheckGameOver()) {
-    Game2048::ResetIfMove(); // reset ifMove = false
-    direction = controller.GetDirection(); // get char direction from #controller Class
-    Game2048::NumberCombine(direction); // use char direction to combine numbers
-    // check: if numbers moved then refresh the screen. if not then dont refresh
-    if (Game2048::GetIfMove()) {
-      Game2048::AddNumber(direction); // if moved the do the add
-      clear(); // refresh the whole screen
-      Game2048::PrintGameScreen(); // print the new screen
+  while (reset=='r' || reset=='R') {
+    // get into main game
+    clear();
+    // Set Start Numbers the Print them
+    Game2048::StartNumber(); // randomly get some numbers
+    Game2048::PrintGameScreen(); // Initiate a screen
+    // check if game is NOT over then loop the main game
+    while (!Game2048::CheckGameOver()) {
+      Game2048::ResetIfMove(); // reset ifMove = false
+      direction = controller.GetDirection(); // get char direction from #controller Class
+      Game2048::NumberCombine(direction); // use char direction to combine numbers
+      // check: if numbers moved then refresh the screen. if not then dont refresh
+      if (Game2048::GetIfMove()) {
+        Game2048::AddNumber(direction); // if moved the do the add
+        clear(); // refresh the whole screen
+        Game2048::PrintGameScreen(); // print the new screen
+      }
+    }
+
+    // get into gameover screen
+    reset = '0';
+    while (reset!='r' && reset!='R' && reset!='e' && reset!='E') {
+      uiLayout.UIGameOver();
+      reset = getch();
     }
   }
 }

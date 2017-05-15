@@ -46,6 +46,7 @@ private:
 	// #include "Controller.hpp"
 	Controller controller; // Controller object
 	char direction; // For Values get from controller.GetDirection()
+	char reset;
 
 	// Initiate Start Numbers
 	// * 1. All Numbers RANDOMLY Begin with a ZERO OR 2

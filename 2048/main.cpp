@@ -12,19 +12,19 @@
 #include <curses.h>
 #include <math.h>
 
-#include "Controller.hpp"
-#include "UILayout.hpp"
 #include "Game2048.hpp"
 
 int main(void) {
   // curses init
   initscr();
+  // sets the cursor state to invisible
+  curs_set(0);
   // capture special keystrokes
   keypad(stdscr, TRUE);
   // Random Seed Initiate
   srand((unsigned)time(NULL));
   // system("clear"); // terminal command
-  clear(); // curses function
+  // clear(); // curses function
 
   // Class Initiate
   Game2048 game2048;

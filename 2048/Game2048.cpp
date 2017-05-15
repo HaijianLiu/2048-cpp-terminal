@@ -215,15 +215,17 @@ void Game2048::PrintGameScreen(){
   Game2048::PrintNumber(uiLayout.GetPosXPrintNumber(),uiLayout.GetPosYPrintNumber());
 }
 
-void Game2048::MainTitle(){
-  uiLayout.PrintTilte(uiLayout.GetPosXPrintTilte(),uiLayout.GetPosYPrintTilte());
-}
-
 void Game2048::MainGameLoop(){
+  // main title screen
+  uiLayout.PrintTilte();
+  // wait user press any key
+  getch();
+
+  // get into main game
+  clear();
   // Set Start Numbers the Print them
   Game2048::StartNumber(); // randomly get some numbers
   Game2048::PrintGameScreen(); // Initiate a screen
-
   // check if game is NOT over then loop the main game
   while (!Game2048::CheckGameOver()) {
     Game2048::ResetIfMove(); // reset ifMove = false

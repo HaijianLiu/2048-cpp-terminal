@@ -30,7 +30,6 @@ public:
 
 	// #include "UILayout.hpp"
 	// #include "Controller.hpp"
-	void MainTitle();
 	void MainGameLoop();
 
 private:
